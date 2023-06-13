@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Департамент праці та соціального захисту населення Миколаївської міської ради</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body>
+    <section class="header">
+    <nav>
+        <a href="index.html"><img src="img/Без_названия-removebg-preview.png"></a>
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html" >Головна</a></li>
+                
+                <li class="dropdown">
+                  <a href="#">Анкетування</a>
+                  <div class="dropdown-menu">
+                    <a href="test.html">Анкетування щодо якості наданих соціальних послуг</a>
+                    <a href="test2.php">Анкетування ВПО</a>
+                    <a href="#">Анкетування пільги</a>    
+                  </div>
+                </li>
+                <li class="dropdown">          
+                <a href="">Реєстрація</a>
+                <div class="dropdown-menu">
+                  <a href="register.php">Реєстрація на зустріч</a>
+                  <a href="poek.php">Реєстрація на пойок</a>  
+                </div>
+              </li>
+              <li class="dropdown">          
+                <a href="">Інформування</a>
+                <div class="dropdown-menu">
+                  <a href="pdf/Брошюра_Довідник OK.pdf">Довідник для ВПО</a>
+                  <a href=""></a>  
+                </div>
+              </li>
+
+                <li class="dropdown">
+                  <a href="#">Контакти</a>
+                  <div class="dropdown-menu">
+                    <a href="contact.html">Департамент</a>
+                    <a href="contact1.html">Усвік Центр</a>
+                    <a href="contact2.html">Усвік Інугл</a>
+                    <a href="contact3.html">Усвік Завод</a>
+                    <a href="contact4.html">Усвік Кораб</a>
+                    <a href="#">Елемент меню 3</a>
+                  </div>
+                </li>
+              </ul>
+              
+    </nav>
+    <div class="text-box">
+        <h4>Департамент праці та соціального захисту населення<br>Миколаївської міської ради</h4>
+        <p>Основним напрямком діяльності департаменту праці та соціального захисту населення є забезпечення реалізації<br> державних та регіональних соціальних програм.</p>
+        <a href="video.html"class="hero-btn">Інформативне відео</a>
+    </div>
+    </section>
+<!------Javascript for Toggle Menu------>
+    <script>
+
+        var navLinks= document.getElementById("navLinks")
+        function showMenu(){
+        navLinks.style.right="0";
+        }
+        function hideMenu(){
+        navLinks.style.right="-200px";
+        }
+    </script>
+</body>
+</html>

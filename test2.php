@@ -94,21 +94,21 @@
     </form>
     <?php
     if (isset($_GET['formSubmit'])){
-  $pib = $_POST["pib"];
-  $phone = $_POST["phone"];
-  $housing = $_POST["housing"];
-  $permanent_housing = $_POST["permanent_housing"];
-  $medical_services = $_POST["medical_services"];
-  $financial_support = $_POST["financial_support"];
-  $food = $_POST["food"];
-  $job = $_POST["job"];
-  $retraining = $_POST["retraining"];
-  $education = $_POST["education"];
-  $social_support = $_POST["social_support"];
-  $information_support = $_POST["information_support"];
-  $job_search = $_POST["job_search"];
-  $internet_access = $_POST["internet_access"];
-$mysqli = new mysqli("localhost", "root", "", "qwe");
+  $pib = $_GET["pib"];
+  $phone = $_GET["phone"];
+  $housing = $_GET["housing"];
+  $permanent_housing = $_GET["permanent_housing"];
+  $medical_services = $_GET["medical_services"];
+  $financial_support = $_GET["financial_support"];
+  $food = $_GET["food"];
+  $job = $_GET["job"];
+  $retraining = $_GET["retraining"];
+  $education = $_GET["education"];
+  $social_support = $_GET["social_support"];
+  $information_support = $_GET["information_support"];
+  $job_search = $_GET["job_search"];
+  $internet_access = $_GET["internet_access"];
+$mysqli = new mysqli("localhost", "root", "", "zxc");
 if ($mysqli->connect_errno) {
             echo "Извините, возникла ошибка на сайте";
             exit;
@@ -130,7 +130,7 @@ if ($mysqli->connect_errno) {
   $important_question = $mysqli->real_escape_string($_POST["important_question"]);
   $important_answer = $mysqli->real_escape_string($_POST["important_answer"]);
 
-  $query = "INSERT INTO survey_results (pib, phone, housing, permanent_housing, medical_services, financial_support, food, job, retraining, education, social_support, information_support, job_search, internet_access, important, not_important) 
+  $query = "INSERT INTO qwe (pib, phone, housing, permanent_housing, medical_services, financial_support, food, job, retraining, education, social_support, information_support, job_search, internet_access, important, not_important) 
 VALUES ('$pib', '$phone', '$housing', '$permanent_housing', '$medical_services', '$financial_support', '$food', '$job', '$retraining', '$education', '$social_support', '$information_support', '$job_search', '$internet_access', '$important', '$not_important')"; 
 
 

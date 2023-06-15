@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form>
+  <form method="get">
     <h2>Анкета на гуманітарну допомогу</h2>
     
     <label for="district">Район:</label>
@@ -20,7 +20,7 @@
     <label for="code">Ідентифікаційний код:</label>
     <input type="text" id="code" name="code" required><br><br>
     <label for="phone">Номер телефону:</label>
-    <input type="text" id="code" name="phone" required><br><br>
+    <input type="text" id="phone" name="phone" required><br><br>
     
     <label for="status">Статус:</label>
     <select id="status" name="status">
@@ -34,7 +34,7 @@
       <option value="guardians">Опікуни</option>
     </select><br><br>
     
-    <input type="submit" value="Надіслати">
+    <input type="submit" name="formSubmit" value="Надіслати">
   </form>
   <?php
     if (isset($_GET['formSubmit'])){
@@ -43,25 +43,26 @@
         $codeform = $_GET['code'];
         $phoneform = $_GET['phone'];
         $statusform = $_GET['status'];
-        $mysqli = new mysqli("localhost", "root", "", "pie-19");
-        if ($mysqli->connect_errno) {
-            echo "Извините, возникла ошибка на сайте";
+        $connection = new mysqli("localhost", "root", "", "bazadanix");
+        if ($connection->connect_errno) {
+            echo "Вибачте, сталася помилка на сайті";
             exit;
         }
-        $district = $mysqli->real_escape_string($districtform);
-        $fullname = $mysqli->real_escape_string($fullnameform);
-        $code = $mysqli->real_escape_string($codeform);
-        $phone = $mysqli->real_escape_string($phoneform);
-        $status = $mysqli->real_escape_string($statusform);
-        $query = "INSERT INTO user (district,fullname,code,phone,status) VALUES ('$district','$fullname','$code','$phone','$status')";
-        if ($mysqli->query($query) === false) {
-            echo "Ошибка: " . $mysqli->error;
+        $district = $connection->real_escape_string($districtform);
+        $fullname = $connection->real_escape_string($fullnameform);
+        $code = $connection->real_escape_string($codeform);
+        $phone = $connection->real_escape_string($phoneform);
+        $status = $connection->real_escape_string($statusform);
+        $query = "INSERT INTO `poek` (`district`, `fullname`, `code`, `phone`, `status`) VALUES ('$district', '$fullname', '$code', '$phone', '$status')";
+        if ($connection->query($query) === false) {
+            echo "Помилка: " . $connection->error;
             exit;
         } else {
-            echo "Успешно" . '<br>';
+            echo "Успішно" . '<br>';
         }
-        $mysqli->close();
+        $connection->close();
     } 
     ?>
 </body>
 </html>
+

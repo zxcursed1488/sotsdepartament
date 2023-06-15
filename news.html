@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новини та Оголошення</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Новини та Оголошення</h1>
+    </header>
+    
+    <div class="content">
+        
+        
+        <div class="news-card">
+            <h2>Питання надання соціальних послуг</h2>
+            <p>Уряд урегулював питання надання соціальних послуг з догляду та медичних послуг потерпілим на виробництві</p>
+            <a href="https://dn.gov.ua/news/uryad-uregulyuvav-pitannya-nadannya-socialnih-poslug-z-doglyadu-ta-medichnih-poslug-poterpilim-na-virobnictvi">Деталі</a>
+        </div>
+        
+        <div class="news-card">
+            <h2>Засідання робочої групи</h2>
+            <p>Відбулося засідання робочої групи з питань створення безбар’єрного простору в місті Миколаєві.</p>
+            <a href="https://www.nikpravda.com.ua/u-mykolayivskij-ova-vidbulosya-zasidannya-robochoyi-grupy-z-pytan-stvorennya-bezbar-yernogo-prostoru-na-mykolayivshhyni/">Деталі</a>
+        </div>
+        <div class="news-card">
+        <h2>Зміни до порядку</h2>
+            <p>Внесено зміни до порядку призначення житлових субсидій</p>
+            <a href="https://www.ukrinform.ua/rubric-society/3697579-urad-sprostiv-poradok-priznacenna-subsidij-pilg-i-deakih-socviplat.html">Деталі</a>
+        </div>
+        <div class="news-card">
+        <h2>Призначення дострокової пенсії</h2>
+            <p>Перелік документів для призначення дострокової пенсії за віком учасникам бойових дій</p>
+            <a href="https://oda.zht.gov.ua/news/gruden-2018/uchasniki-ato-ta-chleni-ix-simej-mayut-pravo-na-priznachennya-dostrokovoi-pensii/#:~:text=%D0%94%D0%BB%D1%8F%20%D0%BF%D1%80%D0%B8%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%BE%D0%B2%D0%BE%D1%97%20%D0%BF%D0%B5%D0%BD%D1%81%D1%96%D1%97%20%D1%83%D1%87%D0%B0%D1%81%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC,%D1%8F%D0%BA%D0%B8%D0%BC%20%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BE%20%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81%20%D1%83%D1%87%D0%B0%D1%81%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B1%D0%BE%D0%B9%D0%BE%D0%B2%D0%B8%D1%85">Деталі</a>
+        </div>
+    </div>
+    
+    <div class="pagination">
+        <a class="active" onclick="changeNews(0)">1</a>
+        <a onclick="changeNews(1)">2</a>
+        <a onclick="changeNews(2)">3</a>
+        <a onclick="changeNews(3)">4</a>
+    </div>
+</div>
+
+<script>
+    function changeNews(index) {
+        const newsCards = document.getElementsByClassName('news-card');
+        const paginationLinks = document.getElementsByClassName('pagination')[0].getElementsByTagName('a');
+
+        for (let i = 0; i < newsCards.length; i++) {
+            newsCards[i].classList.remove('active');
+            paginationLinks[i].classList.remove('active');
+        }
+
+        newsCards[index].classList.add('active');
+        paginationLinks[index].classList.add('active');
+    }
+</script>
+</body>
+</html>

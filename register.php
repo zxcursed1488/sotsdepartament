@@ -9,23 +9,23 @@
 </head>
 <body>
     <form method="get">
-        <label for="name">Имя:</label><br>
+        <label for="name">Им'я:</label><br>
         <input type="text" id="name" name="name"><br>
 
-        <label for="surname">Фамилия:</label><br>
+        <label for="surname">Призвище:</label><br>
         <input type="text" id="surname" name="surname"><br>
 
         <label for="phone">Номер телефона:</label><br>
         <input type="tel" id="phone" name="phone"><br>
 
-        <label for="organization">Выберите организацию:</label><br>
+        <label for="organization">Оберіть організацію:</label><br>
         <select id="organization" name="organization">
             <option value="Департамент Праці">Департамент Праці</option>
-            <option value="Усвік Центр">Усвік Центр</option>
-            <option value="Усвік Завод">Усвік Завод</option>
-            <option value="Усвік Інгул">Усвік Інгул</option>
-            <option value="Усвік Кораб">Усвік Кораб</option>
-            <option value="Терцентр">Терцентр</option>
+            <option value="Усвік Центр">Усвік Центрального району</option>
+            <option value="Усвік Завод">Усвік Заводського району</option>
+            <option value="Усвік Інгул">Усвік Інгульського району</option>
+            <option value="Усвік Кораб">Усвік Корабельного району</option>
+            <option value="Терцентр">Територіальний Центр</option>
         </select><br><br>
         <label for="status">Статус:</label><br>
         <input type="text" id="status" name="status"><br><br>
@@ -55,7 +55,7 @@
             echo "Ошибка: " . $mysqli->error;
             exit;
         } else {
-            echo "Успешно" . '<br>';
+            echo "Успішно" . '<br>';
         }
         $mysqli->close();
     } 
